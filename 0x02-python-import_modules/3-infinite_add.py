@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     from sys import argv
-    len = len(argv)
-    elif len > 1:
-        print("{:d} argument{:s}".format(len - 1, "s:" if len > 2 else ":"))
-        for i in range(1, len):
-            print("{:d}: {:s}".format(i, argv[i]))
+    sum = 0
+    for i in range(1, len(argv)):
+        sum = sum + int(argv[i])
+print("{:d}".format(sum))
