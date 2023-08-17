@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    total_sum = 0
+    sum = 0
     index = 0
     if roman_string is not None:
-        roman_numerals = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
-                          'C': 100, 'D': 500, 'M': 1000}
-        numeral_order = list(roman_numerals.keys())
+        roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
+                 'C': 100, 'D': 500, 'M': 1000}
+        listrom = list(roman.keys())
         length = len(roman_string)
         for char in roman_string:
-            if char in roman_numerals:
+            if char in roman:
                 if char in 'IXC':
-                    if index < length - 1 and numeral_order[index + 1] in 'VXLCDM':
-                        total_sum += roman_numerals[numeral_order[index + 1]] - roman_numerals[char]
-                    else:
-                        total_sum += roman_numerals[char]
-                        index += 1              
-    return total_sum
+                    if index < length-1:
+                        if listrom[index+1] in 'VXLCDM':
+                            sum = sum + (roman[listrom[index+1]]-roman[char])
+                sum += roman[char]
+            index += 1
+    return sum
