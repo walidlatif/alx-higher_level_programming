@@ -1,5 +1,12 @@
 #!/usr/bin/python3
+"""
+0-add_integer module supplies one function
+"""
+
+
+
 def add_integer(a, b=98):
+    """Adds 2 numbers"""
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
