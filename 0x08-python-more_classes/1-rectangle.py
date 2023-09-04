@@ -18,7 +18,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """Method that return the width value
+        """Method that return the width
 
         Returns:
             Rectangle width
@@ -43,12 +43,12 @@ class Rectangle:
             raise TypeError("width must be an integer")
 
         if value < 0:
-            raise TypeError("width must be >= 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
     def height(self):
-        """Method that return the height value
+        """Method that return the height
 
         Returns:
             Rectangle height
@@ -73,5 +73,6 @@ class Rectangle:
             raise TypeError("height must be an integer")
 
         if value < 0:
-            raise TypeError("height must be >= 0")
+            raise ValueError("height must be >= 0")
+        
         self.__height = value
