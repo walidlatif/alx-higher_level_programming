@@ -141,12 +141,15 @@ class Rectangle(Base):
         Function that prints in stdout the Rectangle instance
         with the character #
         """
-        _hash = "\n".join(["#" * self.__width] * self.__height)
-        print("{}".format(_hash))
+        for i in range(self.__y):
+            print()
+        for j in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """
-
+        method so that it returns
+        [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
         return ("[Rectangle] ({}) {}/{} - {}/{}"
                 .format(self.id, self.x, self.y, self.width, self.height))
