@@ -1,6 +1,6 @@
 -- Import in hbtn_0c_0 database this table dump:
 -- Displays the average temperature (Fahrenheit) by city ordered by temperature (descending)
-SELECT city, AVG(temperature) AS avg_temp
+SELECT city, AVG(value) AS average
 FROM temperatures
 GROUP BY city
-ORDER BY avg_temp DESC;
+ORDER BY average DESC;
