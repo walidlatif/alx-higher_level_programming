@@ -1,12 +1,12 @@
---Import the database dump from hbtn_0d_tvshows to your MySQL server: download (same as 12-no_genre.sql
--- Write a script that lists all genres from hbtn_0d_tvshows and displays the number of shows linked to each.
+-- lists all shows, and all genres linked to that show, from the database hbtn_0d_tvshows
+-- cat 16-shows_by_genre.sql | sudo mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 SELECT
-    c.name AS genre,
-    COUNT(*) AS number_of_shows
+    s.title AS title,
+    g.name AS name
 FROM
-    tv_genres c
-    JOIN tv_show_genres s ON c.id = s.genre_id
-GROUP BY
-    c.name
+    tv_shows s
+    LEFT JOIN tv_show_genres sg ON s.id = sg.show_id
+    LEFT JOIN tv_genres g ON sg.genre_id = g.id
 ORDER BY
-    number_of_shows DESC;
+    title,
+    name ASC;
