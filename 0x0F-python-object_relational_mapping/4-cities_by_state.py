@@ -18,8 +18,7 @@ if __name__ == "__main__":
             port=3306
             )
     cursor = connection.cursor()
-    query = f"SELECT * FROM cities " \
-            f"ORDER BY id ASC"
+    query = "SELECT * FROM cities ORDER BY id ASC"
 
     cursor.execute(query)
     data = cursor.fetchall()
