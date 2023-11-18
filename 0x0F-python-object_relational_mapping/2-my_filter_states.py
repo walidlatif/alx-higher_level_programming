@@ -19,10 +19,11 @@ if __name__ == "__main__":
             port=3306
             )
     cursor = connection.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
-    .format(name_searched)
+    query = "SELECT * FROM states " \
+            "WHERE name = '{}' " \
+            "ORDER BY id ASC".format(name_searched)
 
-    cursor.execute(quer)
+    cursor.execute(query)
     data = cursor.fetchall()
 
     for d in data:
