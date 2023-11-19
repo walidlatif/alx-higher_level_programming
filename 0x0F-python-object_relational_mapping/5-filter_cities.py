@@ -29,7 +29,7 @@ if __name__ == "__main__":
     data = cursor.fetchall()
 
     for d in data:
-        print(d)
+        print(d[0])
 
     cursor.close()
     connection.close()
