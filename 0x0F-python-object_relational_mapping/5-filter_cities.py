@@ -28,8 +28,8 @@ if __name__ == "__main__":
     cursor.execute(query, (state_name,))
     data = cursor.fetchall()
 
-    for d in data:
-        print(d[0])
+    city_names = [d[0] for d in data]
+    print(", ".join(city_names))
 
     cursor.close()
     connection.close()
