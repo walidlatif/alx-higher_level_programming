@@ -1,8 +1,11 @@
-const { argv } = require('node:process');
+function factorial (argv) {
+  let fact = 1;
 
-let fact = 1;
+  for (let i = 0; i < argv; i++) {
+    fact *= (argv - i);
+  }
 
-for (let i = 0; i < argv[2]; i++) {
-  fact *= (argv[2] - i);
+  return fact;
 }
-console.log(fact);
+const result = factorial(5);
+console.log(result);
