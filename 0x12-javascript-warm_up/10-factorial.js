@@ -1,19 +1,19 @@
 #!/usr/bin/node
+// factorial
 
-function computeFactorial (num) {
-  if (isNaN(num)) {
+function factorial (n) {
+  if (isNaN(n)) {
     return 1;
-  } else if (num < 0) {
-    return Infinity;
-  } else if (num === 0 || num === 1) {
-    return 1;
-  } else {
-    return num * computeFactorial(num - 1);
   }
+
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+
+  return n * factorial(n - 1);
 }
 
-const args = process.argv.slice(2);
-const input = parseInt(args[0]);
+const args = parseInt(process.argv[2]);
 
-const factorial = computeFactorial(input);
-console.log(factorial);
+const result = factorial(args);
+console.log(result);
